@@ -20,40 +20,43 @@ header {
   box-shadow: 10px 17px 15px #0003;
 }
 
-.container{
+.container {
   margin: 0;
   width: 100vw;
   height: 91vh;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0;
 }
 
 .container2 {
   margin: 0;
   background-color: #0003;
   width: 80vw;
-  height: 78vh;
+  height: 75vh;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.containerCards {
+  height: 75vh;
+  margin-left: 1rem;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  padding-right: 25px;
   overflow-y: scroll;
 }
 
 .card {
   background-color: white;
-  width: 250px;
+  width: 234px;
   height: 365px;
   border-radius: 1rem;
-  margin-left: 2rem;
-  margin-top: 2rem;
   margin-bottom: 1rem;
+  margin-right: 1rem;
   box-shadow: 10px 10px 15px #0003;
-
   display: flex;
   justify-content: center;
 }
@@ -68,8 +71,8 @@ header {
 
 .item1 {
   background-color: blue;
-  width: 7vw;
-  height: 3vh;
+  width: 127px;
+  height: 35px;
   margin-top: 1rem;
   margin-right: 1rem;
   margin-left: 2.2rem;
@@ -93,15 +96,16 @@ header {
 
 .adicionarButton {
   background-color: #1e111d;
-  width: 7.5vw;
+  width: 7vw;
   height: 3.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  margin-left: 2rem;
   border-radius: 4px;
   color: white;
   font-family: 'Lobster', cursive;
+  font-size: 0.8rem;
 }
 
 ::-webkit-scrollbar {
@@ -111,4 +115,37 @@ header {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 30px;
+}
+
+.containerModal {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalCreate {
+  margin: 0;
+  width: 70vw;
+  height: 75vh;
+  display: none;
+  border-radius: 20px;
+  position: absolute;
+  top: 15%;
+}
+
+@keyframes changeBackgroundColor {
+  /* 0% {
+    background-color: green;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+  } */
+  from { background-color: red;}
+  to {
+    background-color: #000;
+  }
 }
