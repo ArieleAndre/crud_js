@@ -5,34 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@200&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
-     <section class="containerPricipal">
-         <div class="segundoContainer">
-             <div class="title">
-                <h1>Seja bem-vindo!</h1>
-            </div>
-            <p class="paragrafoExplicativo">Insira os seus dados nos campos abaixo <br>
-                para acessar a sua conta.</p>
-            <div  class="andaCima">
-                <input type="text" placeholder="Usuário" name="uname" required>
-            </div>
-            <div class="andaBaixo">
-                <input type="password" placeholder="Senha" name="psw" required>
-            </div>
-            <div class="textoEsqueci">
+<section class="container-Pricipal">
+    <div class="segundo-Container">
+        <div class="titulo-Principal">
+            <h1>Seja bem-vindo!</h1>
+        </div>
+        <p class="Titulo-Explicativo">
+            Insira os seus dados nos campos abaixo
+            para acessar a sua conta.</p>
+        <div  class="input_email">
+            <input class="input_login" type="email" placeholder="Usuário">
+        </div>
+        <div class="input_senha">
+             <input class="input_segundo" type="password" placeholder="Senha">
+        </div>
+        <div class="senha-esquecida">
             <label>Esqueci minha senha</label> 
-            </div>
-            <div class="buttonEntrar">
-            <button>Entrar</button>
-            </div>
-            <div class="textoCadastrar">
-                <span class="textos">Ainda não tem conta? Cadastrar</span> 
-             </div>
-           
-         </div>
-         <p>Precisa de ajuda?</p>
-     </section>
+        </div>
+        <div class="botao_entrar">
+            <input class="button" type="submit" value="Enviar"/>
+        </div>
+        <div class="input_cadastrar">
+            <span class="texto_cadastrar">Ainda não tem conta? Cadastrar</span> 
+        </div>
+    </div>
+    <p class="rodape">Precisa de ajuda?</p>
+</section>
+<section class="parte2">
+
+</section>
+<script src="login.js"></script>
 </body>
 </html>
