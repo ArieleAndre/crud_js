@@ -1,13 +1,14 @@
 *{
     margin: 0;
-  
 }
+
 .container-Pricipal{
     float: right;
     box-shadow: 0px 0px 30px rgba(12, 5, 7, 0.1);
     background-color:#2c192b;
     width:45%;
-    height:100vh;
+    max-height:100vh;
+    height: 100vh;
     left: 720px;
     top: 0px;
     display: flex;
@@ -17,44 +18,93 @@
 
 .segundo-Container{
     left: 25%;
-    width: 45%;
-}
-.parte2{
-    box-shadow: 0px 0px 30px rgba(3, 1, 2, 0.1);
-    background-color:#2c192b;
-    width:55%;
-    height:100vh;
-    
+    max-width:60%;
+    width: 55%;
+    max-height:70%;
+    height:70%;
 }
 
-.input_login, .input_segundo{
-    display:inline-block;
-    width: 17.3vw;
+.contanier_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__input-border{
+    max-height:1px;
+    height: 1px;
+    /* max-width: 25vw; */
+    width:25vw;
+    margin-bottom: 10px;
+    background-color: white;
+    transition: .3s ease-in-out;
+}
+
+.login__input-border::after {
+    display: block;
+    height:1px;
+    width: 0;
+    margin-bottom: 16px;
+    background:linear-gradient(120deg, #c149e6, #c149e6, #c149e6);
+    transition: .3s ease-in-out;
+}
+
+.input_login:focus + .login__input-border::after {
+    width: 100%;
+}
+
+.input_border.error{
+    background:red;
+}
+
+.login__input-border.error::after {
+    background: red;
+}
+
+.input_senha:focus + .login__input-border::after {
+    width: 100%;
+}
+
+.input_login, .input_senha{
+    max-width:50vw;
+    width: 25vw;
+    max-height:6vh ;
     height: 6vh;
-    border: 0;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px #eee;
-    text-shadow:none;
+    box-sizing: border-box;
+    border: unset;
+    outline: none;
     padding-left: 13px;
+    background-color:#2c192b;
+    color: white;
+} 
+
+.input_login::-webkit-input-placeholder{
+    color:rgb(255, 255, 255);
+    text-transform:lowercase;
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 16px;
 }
 
-.input_email{
-    padding: 10px;
+
+.input_senha::-webkit-input-placeholder{
+    color:rgb(255, 255, 255);
+    text-transform:lowercase;
+    font-family: 'M PLUS 2', sans-serif;
+    font-size: 16px;
+}
+
+.input_login{
+    border: unset;
     padding-left: 15px;
     margin-top: 30px;
 }
 
-.input_senha{
-    padding-bottom:20px;
-    padding-left: 15px;
-    margin-top: 10px;
-}
-
 .titulo-Principal{
     margin-left: 15px;
+    max-width: 19vw;
     width: 19vw;
+    max-height: 10vh;
     height: 10vh;
 }
 
@@ -72,7 +122,7 @@ h1{
     font-family: 'M PLUS 2', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 19px;
     line-height: 19px;
     margin-left: 15px;
     letter-spacing: -0.4px;
@@ -87,9 +137,29 @@ h1{
     text-shadow:none;
 }
 
+.button:disabled{
+    background:#d37ecd;
+  
+    cursor: not-allowed;
+}
+.button.sucess {
+    background:purple;
+  }
+
 .senha-esquecida{
-    width: 20vw;
+    max-width:20vw;
+    width:20vw;
+    max-height:5vh;
     height: 5vh;
+}
+
+.input_senha{
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.label-texto{
+ margin-top: 18px;
 }
 
 label{
@@ -110,8 +180,10 @@ label{
 }
 
 .button{
-    margin-left: 65px;
+    margin-left: 85px;
+    max-width:12vw;
     width: 12vw;
+    max-height:6vh;
     height: 6vh;
     font-family: 'M PLUS 2', sans-serif;
     font-style: normal;
@@ -121,21 +193,22 @@ label{
     text-align: center;
     letter-spacing: -0.2px;
     color: #ffffff;
-    background-color: #472845;
+    background-color:#472845; 
 }
 
 .input_cadastrar{
-    width: 20vw;
+    max-width: 25vw;
+    width: 25vw;
+    max-height:5vh;
     height: 5vh;
-  
 }
 
 .texto_cadastrar{
-    margin-left: 25px;
+    margin-left: 60px;
     font-family: 'M PLUS 2', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
     text-align: center;
     letter-spacing: -0.2px;
@@ -157,6 +230,360 @@ label{
     letter-spacing: -0.2px;
     color: #ffffff;
 }
+
+.container-erro{
+    position: fixed;
+    top:25px;
+    right: 16px;
+    display: none;
+    opacity: 50%;
+}
+
+.container-erro:hover{
+    opacity: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.mensagem-erro:hover{
+    background:rgb(212, 49, 49);
+}
+
+.mensagem-erro{
+    background: rgb(211, 51, 51);
+    width: 19vw;
+    height: 5vh;
+    border-radius: 5px;
+}
+
+.texto_erro{
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 19px;
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+}
+
+.container-erro.error{
+    display: flex;
+    animation-duration: 1s;
+    animation-name: slidein;
+ }
+
+ .container-erro.ocultaMensagem{
+     display: none;
+ }
+
+ .container-sucess{
+    position: fixed;
+    top:25px;
+    right: 16px;
+    display: none;
+    opacity: 50%;
+ }
+
+ .mensagem-sucess{
+    background: rgb(190, 83, 190);
+    max-width:19vw;
+    width: 19vw;
+    max-height:5vh;
+    height: 5vh;
+    border-radius: 5px;
+ }
+
+ .texto_sucess{
+    font-family: 'M PLUS 2', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 19px;
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+ }
+
+ .parte2{
+    box-shadow: 0px 0px 30px rgba(3, 1, 2, 0.1);
+    background-color:#2c192b;
+    max-width:55%;
+    width:55%;
+    max-height:100vh;
+    height:100vh;
+}
+
+@media screen and (min-width: 1079px) and (max-width: 1250px){
+    h1{
+        font-size:33px;
+      }
+}
+
+@media screen and (min-width: 1005px) and (max-width: 1079px){
+    h1{
+        font-size:31px;
+      }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1005px){
+    h1{
+        font-size:30px;
+      }
+}
+
+@media screen and (min-width:860px) and (max-width:  980px){
+    h1{
+        font-size:26px;
+      }
+}
+ 
+ @media screen and (min-width: 700px) and (max-width:860px){
+    .parte2{
+        width:0;
+        height:0;
+        display:none;
+    }
+      .container-Pricipal{
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+      }
+} 
+
+@media screen and (min-width: 700px) and (max-width:860px){
+    .parte2{
+        width:0;
+        height:0;
+        display:none;
+    }
+    .container-Pricipal{
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+    }
+    h1{
+        font: size 34px;
+    }
+    .titulo-Principal{
+        margin-left: 17px;
+        max-width: 50vw;
+        width: 50vw;
+    }
+    .Titulo-Explicativo{
+        margin-left: 17px;
+        font-weight: 500;
+        font-size: 25px;
+        margin-left: 15px;
+
+    }
+    .input_login{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height:7vh;
+    }
+    .input_senha{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height: 7vh;
+    }
+    .login__input-border{
+        max-height:3px;
+        height: 1px;
+        max-width: 50vw;
+        width:45vw;
+    }
+    label{
+        margin-left: 84px;
+        font-size: 23px;
+        line-height: 19px;
+    }
+    .button{
+        margin-left: 85px;
+        max-width:28vw;
+        width: 28vw;
+        max-height:6vh;
+        height: 6vh;
+        font-size: 17px;
+    }
+    .input_cadastrar{
+        max-width: 55vw;
+        width: 55vw;
+        max-height:5vh;
+        height: 5vh;
+    }
+    .texto_cadastrar{
+        margin-left: 30px;
+        font-size: 22px;
+    }
+    .rodape{
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        margin-bottom: 40px;
+        margin-left: 45px;
+        font-size: 25px;
+        line-height: 19px;
+    }
+} 
+@media screen and (min-width: 500px) and (max-width:700px){
+    .parte2{
+        width:0;
+        height:0;
+        display:none;
+    }
+    .container-Pricipal{
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+    }
+    h1{
+        font: size 34px;
+    }
+    .titulo-Principal{
+        margin-left: 17px;
+        max-width: 50vw;
+        width: 50vw;
+    }
+    .Titulo-Explicativo{
+        margin-left: 17px;
+        font-weight: 500;
+        font-size: 25px;
+        margin-left: 15px;
+
+    }
+    .input_login{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height:7vh;
+    }
+    .input_senha{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height: 7vh;
+    }
+    .login__input-border{
+        max-height:3px;
+        height: 1px;
+        max-width: 50vw;
+        width:45vw;
+    }
+    label{
+        margin-left: 84px;
+        font-size: 23px;
+        line-height: 19px;
+    }
+    .button{
+        margin-left: 85px;
+        max-width:28vw;
+        width: 28vw;
+        max-height:6vh;
+        height: 6vh;
+        font-size: 17px;
+    }
+    .input_cadastrar{
+        max-width: 55vw;
+        width: 55vw;
+        max-height:5vh;
+        height: 5vh;
+    }
+    .texto_cadastrar{
+        margin-left: 30px;
+        font-size: 22px;
+    }
+    .rodape{
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        margin-bottom: 40px;
+        margin-left: 45px;
+        font-size: 25px;
+        line-height: 19px;
+    }
+     
+} 
+@media screen and (min-width: 200px) and (max-width:500px){
+    .parte2{
+        width:0;
+        height:0;
+        display:none;
+    }
+    .container-Pricipal{
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+    }
+    h1{
+        font: size 34px;
+    }
+    .titulo-Principal{
+        margin-left: 17px;
+        max-width: 50vw;
+        width: 50vw;
+    }
+    .Titulo-Explicativo{
+        margin-left: 17px;
+        font-weight: 500;
+        font-size: 25px;
+        margin-left: 15px;
+
+    }
+    .input_login{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height:7vh;
+    }
+    .input_senha{
+        max-width:80vw;
+        width: 45vw;
+        max-height:7vh ;
+        height: 7vh;
+    }
+    .login__input-border{
+        max-height:3px;
+        height: 1px;
+        max-width: 50vw;
+        width:45vw;
+    }
+    label{
+        margin-left: 84px;
+        font-size: 23px;
+        line-height: 19px;
+    }
+    .button{
+        margin-left: 85px;
+        max-width:28vw;
+        width: 28vw;
+        max-height:6vh;
+        height: 6vh;
+        font-size: 17px;
+    }
+    .input_cadastrar{
+        max-width: 55vw;
+        width: 55vw;
+        max-height:5vh;
+        height: 5vh;
+    }
+    .texto_cadastrar{
+        margin-left: 30px;
+        font-size: 22px;
+    }
+    .rodape{
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        margin-bottom: 40px;
+        margin-left: 45px;
+        font-size: 25px;
+        line-height: 19px;
+    }
+     
+} 
 
 
 

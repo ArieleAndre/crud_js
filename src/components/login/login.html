@@ -14,34 +14,32 @@
     <title>Login</title>
 </head>
 <body>
-<section class="container-Pricipal">
+<section  class="container-Pricipal">
     <div class="segundo-Container">
-        <div class="titulo-Principal">
-            <h1>Seja bem-vindo!</h1>
-        </div>
+        <h1 class="titulo-Principal">Seja bem-vindo!</h1>
         <p class="Titulo-Explicativo">
             Insira os seus dados nos campos abaixo
-            para acessar a sua conta.</p>
-        <div  class="input_email">
+            para acessar a sua conta.
+        </p>
+        <form  class="contanier_input">
             <input class="input_login" type="email" placeholder="Usuário">
-        </div>
-        <div class="input_senha">
-             <input class="input_segundo" type="password" placeholder="Senha">
-        </div>
-        <div class="senha-esquecida">
-            <label>Esqueci minha senha</label> 
+            <span class="login__input-border"></span>
+            <input class="input_senha" type="password" placeholder="Senha">
+            <span class="login__input-border"></span>
+        </form>
+        <div class="label-texto">
+            <label>Esqueci minha senha</label>
         </div>
         <div class="botao_entrar">
-            <input class="button" type="submit" value="Enviar"/>
+            <input class="button"  type="submit" value="Enviar"/>
         </div>
         <div class="input_cadastrar">
             <span class="texto_cadastrar">Ainda não tem conta? Cadastrar</span> 
         </div>
     </div>
-    <p class="rodape">Precisa de ajuda?</p>
+<p class="rodape">Precisa de ajuda?</p>
 </section>
 <section class="parte2">
-
 </section>
 <script src="login.js"></script>
 </body>
